@@ -21,6 +21,17 @@ This project is inspired by [BoKKeR](https://github.com/BoKKeR)'s telegram [bot]
 
 Instructions to deploy to **Heroku** or **self-host** resides in the [wiki](https://github.com/hyPnOtICDo0g/rss-chan/wiki).
 
+# Config
+
+Make a config.env on gist and add this value
+```
+BOT_TOKEN = "" # tg bok token ofc
+OWNER_ID =  # who manage all things
+CHAT_ID = "" # channal id
+DELAY = 600 # The delay between each feed request. (set 600)
+CUSTOM_MESSAGES = "" # To display a custom message at the top of every new feed.
+DATABASE_URL = "" # heroku-postgresql database url
+```
 # Usage
 
 The bot uses a `TITLE <-> URL` mechanism so that the user doesn't have to mess with the feed **URL** every time, instead use a **TITLE** to perform a task.
