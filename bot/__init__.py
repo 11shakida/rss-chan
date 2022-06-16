@@ -12,11 +12,10 @@ owner_filter = OwnerFilter()
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
+load_dotenv('config.env', override=True)
 # Environment Variables
 def getConfig(name: str):
     return os.environ[name]
-load_dotenv('config.env')
-
 try:
     BOT_TOKEN = getConfig('BOT_TOKEN')
     OWNER_ID = int(getConfig('OWNER_ID'))
