@@ -11,4 +11,4 @@ COPY . /app
 RUN pip install --trusted-host pypi.python.org -r /app/requirements.txt
 
 # Run the bot when the container launches
-CMD ["python", "-m", "bot"]
+CMD ["bash", "start.sh"]
