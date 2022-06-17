@@ -32,4 +32,4 @@ try:
 except:
     CUSTOM_MESSAGES = ""
 
-updater = Updater(token=BOT_TOKEN, use_context=True)
+updater = Updater(token=BOT_TOKEN, request_kwargs={'read_timeout': 20, 'connect_timeout': 15})
