@@ -1,5 +1,7 @@
 # Use an official Python runtime as a parent image
-FROM 11shakida/rss-chan:main
+FROM debian:latest
+
+RUN apt update && apt upgrade -y
 
 WORKDIR /usr/src/app
 RUN chmod 777 /usr/src/app
