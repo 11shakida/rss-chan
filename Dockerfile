@@ -1,13 +1,14 @@
 # Use an official Python runtime as a parent image
-FROM debian:latest
+FROM python:3.8-slim
 
-RUN apt update && apt upgrade -y
+# Set the working directory to /app
+WORKDIR /app
 
-WORKDIR /usr/src/app
-RUN chmod 777 /usr/src/app
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-COPY . .
-RUN pip3 install --no-cache-dir -r requirements.txt
+# Install any required packages specified in requirements.txt
+RUN pip install --trusted-host pypi.python.org -r /app/requirements.txt
 
 # Run the bot when the container launches
 CMD ["bash", "start.sh"]
